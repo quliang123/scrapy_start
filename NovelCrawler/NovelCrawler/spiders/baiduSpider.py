@@ -6,10 +6,10 @@ class baiduSpider(scrapy.Spider):
     name = "baidu"
     allowed_domains = ["baidu.com"]
     start_urls = [
-        "http://fanyi.baidu.com/translate?aldtype=16047&query=.RemotingException&keyfrom=baidu&smartresult=dict&lang=auto2zh#en/zh/.RemotingException"
+        "https://www.baidu.com/"
     ]
 
     def parse(self, response):
-        fileName = response.url.split("/")[-2]
-        print response.css('body')
-        open("D:\\ideaFile\\python\\NovelCrawler\\anaFile\\" + fileName, 'w').write(response.body)
+        fileName = response.url.split("/")[-2] + ".txt"
+        print response.body
+        open("D:\\ideaFile\\python\\NovelCrawler\\NovelCrawler\\anaFile\\" + fileName, 'a+').write(response.body)

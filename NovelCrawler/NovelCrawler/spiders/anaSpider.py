@@ -34,7 +34,7 @@ class itemSpider(scrapy.Spider):
                 # fileName = fileName.decode()
             # 文件的名称为作者名字—语录.txt。  # 文件的名称为作者名字—语录.txt。
             if fileName is not None:
-                with open("D:\\ideaFile\\python\\NovelCrawler\\" + fileName , "a+")as f:
+                with open("D:\\ideaFile\\python\\NovelCrawler\\NovelCrawler\\anaFile\\" + fileName.decode("utf8"), "a+")as f:
                     if author is not None:
                         f.write('\n-----------------' + author + '---------------------\n')
                     if text is not None:
